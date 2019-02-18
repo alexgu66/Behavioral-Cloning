@@ -11,14 +11,7 @@ The goals / steps of this project are the following:
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
 
-
-## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
-
----
-### Files Submitted & Code Quality
-
-#### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
+#### 1. Required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
 * model.py containing the script to create and train the model
@@ -59,7 +52,7 @@ The model was trained and validated on different data sets to ensure that the mo
 
 I also tried adding a dropout layer after first CNN or first fully connected layer, the result didn't change a lot, so I removed it. Then I used the early stop to reduce the overfitting (code line 87-90), a call back was registered with val_loss as monitor. The early stop works very well, following is a chart shows how the loss and val_loss converged and stopped training.
 
-![history_1](C:\temp\Backup\Work\UC\Self Driving Car\12P Behavioral Training\CarND-Behavioral-Cloning-P3-master\submit\images\history_1.png)
+![history_1](\images\history_1.png)
 
 #### 3. Model parameter tuning
 
@@ -113,19 +106,19 @@ The final model architecture (model.py lines 68-80) consisted of a convolution n
 
 To capture good driving behavior, I used the data provided by the lecture. Here is an example image of center lane driving:
 
-![center_2017_12_15_15_48_49_916](C:\temp\Backup\Work\UC\Self Driving Car\12P Behavioral Training\CarND-Behavioral-Cloning-P3-master\images\center_2017_12_15_15_48_49_916.jpg)
+![center_2017_12_15_15_48_49_916](\images\center_2017_12_15_15_48_49_916.jpg)
 
 I checked the image of the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to adjust the direction. There're many kinds of recovery images in the data set, following is a sample:
 
-![recovery_left_2016_12_01_13_32_46_689](C:\temp\Backup\Work\UC\Self Driving Car\12P Behavioral Training\CarND-Behavioral-Cloning-P3-master\images\recovery_left_2016_12_01_13_32_46_689.jpg)
+![recovery_left_2016_12_01_13_32_46_689](\images\recovery_left_2016_12_01_13_32_46_689.jpg)
 
 There're total 8036 data points in the data set.
 
 To augment the data sat, I also flipped images and angles horizontally. For example, here is an image that has been flipped:
 
-![flip_after_center_2016_12_01_13_31_13_279](C:\temp\Backup\Work\UC\Self Driving Car\12P Behavioral Training\CarND-Behavioral-Cloning-P3-master\images\flip_after_center_2016_12_01_13_31_13_279.jpg)
+![flip_after_center_2016_12_01_13_31_13_279](\images\flip_after_center_2016_12_01_13_31_13_279.jpg)
 
-![flip_before_center_2016_12_01_13_31_13_279](C:\temp\Backup\Work\UC\Self Driving Car\12P Behavioral Training\CarND-Behavioral-Cloning-P3-master\images\flip_before_center_2016_12_01_13_31_13_279.jpg)
+![flip_before_center_2016_12_01_13_31_13_279](\images\flip_before_center_2016_12_01_13_31_13_279.jpg)
 
 
 
